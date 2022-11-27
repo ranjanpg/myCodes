@@ -7,9 +7,9 @@ int maxSubArray(vector<int>& nums) {
             if(curr_sum>max_sum){
                 max_sum=curr_sum;
             }
-            while(curr_sum<0 && start<=i){
-                curr_sum-=nums[start];
-                start++;
+            if(curr_sum<0){
+                curr_sum=0;
+                start=i+1;
             }
         }
     return max_sum;}
